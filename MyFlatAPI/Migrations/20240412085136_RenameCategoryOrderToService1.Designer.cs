@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyFlatAPI.Data;
 
 namespace MyFlatAPI.Migrations
 {
     [DbContext(typeof(MyFlatAPIDBContext))]
-    partial class MyFlatAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240412085136_RenameCategoryOrderToService1")]
+    partial class RenameCategoryOrderToService1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,14 +50,14 @@ namespace MyFlatAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "00b8a498-eb1f-4133-94fd-3c2b87e43723",
+                            Id = "a7541b2a-a5c2-4b7c-a489-a90c1ca8efac",
                             ConcurrencyStamp = "6d5c54e4-667f-4b61-9ac9-d61039cdf950",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "75125766-9df9-4e49-91dd-ef34fb96d6e7",
+                            Id = "832fc885-4109-417d-8174-48eb4d201bad",
                             ConcurrencyStamp = "302dc497-bf7b-49fa-af47-cc1123b3fe8e",
                             Name = "User",
                             NormalizedName = "USER"
@@ -237,9 +239,6 @@ namespace MyFlatAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CategoryDescription")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()

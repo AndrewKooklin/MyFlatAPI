@@ -1,8 +1,4 @@
 ﻿using MyFlatAPI.Data.Repositories.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyFlatAPI.Data
 {
@@ -10,9 +6,13 @@ namespace MyFlatAPI.Data
     {
         public IAccountRepositoryAPI Accounts { get; set; }
 
-        public DataManager(IAccountRepositoryAPI accounts)
+        public IRenderingRepositoryAPI Rendering { get; set; }
+
+        public DataManager(IAccountRepositoryAPI accounts,
+                           IRenderingRepositoryAPI rendering)
         {
             Accounts = accounts;
+            Rendering = rendering;
         }
     }
 }

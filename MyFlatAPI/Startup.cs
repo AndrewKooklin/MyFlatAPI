@@ -35,8 +35,9 @@ namespace MyFlatAPI
             Configuration.Bind("MyFlatAPI", new Config());
 
             //подключаем сервисы
-            //services.AddTransient<IPhoneBookRecordRepositoryAPI, EFPhoneBookRecordsRepositoryAPI>();
+            
             services.AddTransient<IAccountRepositoryAPI, EFAccountRepositoryAPI>();
+            services.AddTransient<IRenderingRepositoryAPI, EFRenderingRepositoryAPI>();
             services.AddTransient<DataManager>();
 
             //подключаем контекст БД

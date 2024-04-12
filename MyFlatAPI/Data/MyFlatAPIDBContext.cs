@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MyFlatAPI.Data.Models;
 
 namespace MyFlatAPI.Data
 {
@@ -8,10 +9,11 @@ namespace MyFlatAPI.Data
     {
         public MyFlatAPIDBContext(DbContextOptions<MyFlatAPIDBContext> options) : base(options) { }
 
+        public DbSet<CategoryServiceModel> CategoryService { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
 
             builder.Entity<IdentityRole>().HasData(new IdentityRole
             {
