@@ -5,7 +5,20 @@ C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.exe
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.csprojAssemblyReference.cache
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.AssemblyInfoInputs.cache
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.AssemblyInfo.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.RazorAssemblyInfo.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.RazorAssemblyInfo.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.TagHelpers.input.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.TagHelpers.output.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.RazorCoreGenerate.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.RazorTargetAssemblyInfo.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.RazorTargetAssemblyInfo.cs
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\staticwebassets\MyFlatAPI.StaticWebAssets.Manifest.cache
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\staticwebassets\MyFlatAPI.StaticWebAssets.xml
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -58,6 +71,8 @@ C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.runtimeconfig.jso
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.runtimeconfig.dev.json
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.pdb
+C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.Views.dll
+C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.Views.pdb
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -133,6 +148,7 @@ C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnaly
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.csproj.CoreCompileInputs.cache
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.Views.pdb
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.dll
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.pdb
 C:\repos\MyFlatAPI\MyFlatAPI\obj\Debug\netcoreapp3.1\MyFlatAPI.genruntimeconfig.cache
