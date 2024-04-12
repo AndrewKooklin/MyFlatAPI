@@ -4,10 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyFlatAPI.Data;
+using MyFlatAPI.Data.Repositories.Abstract;
+using MyFlatAPI.Data.Repositories.EF;
 
 namespace MyFlatAPI
 {
@@ -23,7 +31,39 @@ namespace MyFlatAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //подключаем Config из appsettings.json для получения connectionString
+            Configuration.Bind("MyFlatAPI", new Config());
+
+            //подключаем сервисы
+            //services.AddTransient<IPhoneBookRecordRepositoryAPI, EFPhoneBookRecordsRepositoryAPI>();
+            services.AddTransient<IAccountRepositoryAPI, EFAccountRepositoryAPI>();
+            services.AddTransient<DataManager>();
+
+            //подключаем контекст БД
+            services.AddDbContext<MyFlatAPIDBContext>(x => x.UseSqlServer(Config.ConnectionString));
+
+            //настраиваем Identity систему
+            services.AddIdentity<IdentityUser, IdentityRole>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            })
+            .AddEntityFrameworkStores<MyFlatAPIDBContext>()
+            .AddDefaultTokenProviders();
+
+            services.AddControllers();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddHttpContextAccessor();
+            services.AddRouting(options =>
+            {
+                options.ConstraintMap.Add("PhoneBookRecord", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("LoginModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("RegisterModel", typeof(ProvaRouteConstraint));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,12 +75,10 @@ namespace MyFlatAPI
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -48,10 +86,20 @@ namespace MyFlatAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name:"default",
+                    pattern:"{controller=RolesAPI}/{action=GetRoles}/{id?}");
+                //endpoints.MapControllerRoute(name: "default",
+                //    pattern: "{controller=RolesAPI}/{action=GetRoles}/{id?}");
             });
+        }
+
+        internal class ProvaRouteConstraint : IRouteConstraint
+        {
+            public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,
+                              RouteValueDictionary values, RouteDirection routeDirection)
+            {
+                return false;
+            }
         }
     }
 }
