@@ -12,6 +12,8 @@ namespace MyFlatAPI.Data
 
         public DbSet<ServiceModel> Service { get; set; }
 
+        public DbSet<StatusModel> Status { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

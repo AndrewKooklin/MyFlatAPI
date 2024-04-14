@@ -9,9 +9,11 @@ namespace MyFlatAPI.Data.Models.Rendering
     public class ServiceModel : BaseModel
     {
         [Required]
-        [MinLength(3, ErrorMessage = "Имя категории не менее 3 символов")]
+        [MinLength(3)]
         public string ServiceName { get; set; }
 
+        [Required]
+        [MinLength(3)]
         public string ServiceDescription { get; set; }
     }
 }
