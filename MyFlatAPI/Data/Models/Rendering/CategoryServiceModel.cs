@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
+using MyFlatAPI.Data.Models;
 
-namespace MyFlatAPI.Data.Models
+namespace MyFlatAPI.Data.Models.Rendering
 {
     public class CategoryServiceModel : BaseModel
     {
