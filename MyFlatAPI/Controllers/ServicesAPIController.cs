@@ -17,10 +17,10 @@ namespace MyFlatAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/{GetCategoryNames}")]
-        public List<string> GetCategoryNames()
+        [Route("[controller]/{GetServiceNames}")]
+        public List<string> GetServiceNames()
         {
-            return _dataManager.Rendering.GetCategoryNames();
+            return _dataManager.Rendering.GetServiceNames();
         }
     }
 }

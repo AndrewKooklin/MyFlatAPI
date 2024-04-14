@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyFlatAPI.Data.Models;
+using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Data
 {
@@ -9,7 +10,7 @@ namespace MyFlatAPI.Data
     {
         public MyFlatAPIDBContext(DbContextOptions<MyFlatAPIDBContext> options) : base(options) { }
 
-        public DbSet<CategoryServiceModel> CategoryService { get; set; }
+        public DbSet<ServiceModel> Service { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

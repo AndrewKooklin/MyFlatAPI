@@ -7,6 +7,6 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 {
     public interface IRenderingRepositoryAPI
     {
-        List<string> GetCategoryNames();
+        List<string> GetServiceNames();
     }
 }

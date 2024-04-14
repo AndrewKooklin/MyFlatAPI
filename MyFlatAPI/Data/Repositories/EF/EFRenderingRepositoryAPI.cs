@@ -15,13 +15,13 @@ namespace MyFlatAPI.Data.Repositories.EF
             _context = context;
         }
 
-        public List<string> GetCategoryNames()
+        public List<string> GetServiceNames()
         {
             List<string> names = new List<string>();
 
-            foreach (var category in _context.CategoryService)
+            foreach (var category in _context.Service)
             {
-                names.Add(category.CategoryName);
+                names.Add(category.ServiceName);
             };
 
             return names;

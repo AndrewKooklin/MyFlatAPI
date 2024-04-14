@@ -6,12 +6,12 @@ using MyFlatAPI.Data.Models;
 
 namespace MyFlatAPI.Data.Models.Rendering
 {
-    public class CategoryServiceModel : BaseModel
+    public class ServiceModel : BaseModel
     {
         [Required]
         [MinLength(3, ErrorMessage = "Имя категории не менее 3 символов")]
-        public string CategoryName { get; set; }
+        public string ServiceName { get; set; }
 
-        public string CategoryDescription { get; set; }
+        public string ServiceDescription { get; set; }
     }
 }
