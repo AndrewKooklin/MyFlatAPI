@@ -61,7 +61,6 @@ namespace MyFlatAPI
             services.AddHttpContextAccessor();
             services.AddRouting(options =>
             {
-                options.ConstraintMap.Add("PhoneBookRecord", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("LoginModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("RegisterModel", typeof(ProvaRouteConstraint));
             });
@@ -88,7 +87,7 @@ namespace MyFlatAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name:"default",
-                    pattern:"{controller=RolesAPI}/{action=GetRoles}/{id?}");
+                                             pattern:"{controller=RolesAPI}/{action=GetRoles}/{id?}");
                 //endpoints.MapControllerRoute(name: "default",
                 //    pattern: "{controller=RolesAPI}/{action=GetRoles}/{id?}");
             });

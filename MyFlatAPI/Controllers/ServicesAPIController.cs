@@ -18,14 +18,14 @@ namespace MyFlatAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/{GetServiceNames}")]
+        [Route("[controller]/GetServiceNames")]
         public List<string> GetServiceNames()
         {
             return _dataManager.Rendering.GetServiceNames();
         }
 
         [HttpGet]
-        [Route("[controller]/{GetServiceOrdersCount}")]
+        [Route("[controller]/GetServiceOrdersCount")]
         public List<ServiceOrdersCountModel> GetServiceOrdersCount()
         {
             return _dataManager.Rendering.GetServiceOrdersCount();
