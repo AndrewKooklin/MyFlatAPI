@@ -19,7 +19,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             List<string> names = new List<string>();
 
-            foreach (var category in _context.Service)
+            foreach (var category in _context.Services)
             {
                 names.Add(category.ServiceName);
             };

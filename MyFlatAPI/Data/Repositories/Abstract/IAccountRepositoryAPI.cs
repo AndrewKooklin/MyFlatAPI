@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MyFlatAPI.Data.Models;
+using MyFlatAPI.Data.Models.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;

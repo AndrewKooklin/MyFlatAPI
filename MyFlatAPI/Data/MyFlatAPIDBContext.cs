@@ -10,11 +10,11 @@ namespace MyFlatAPI.Data
     {
         public MyFlatAPIDBContext(DbContextOptions<MyFlatAPIDBContext> options) : base(options) { }
 
-        public DbSet<OrderModel> Order { get; set; }
+        public DbSet<OrderModel> Orders { get; set; }
 
-        public DbSet<ServiceModel> Service { get; set; }
+        public DbSet<ServiceModel> Services { get; set; }
 
-        public DbSet<StatusModel> Status { get; set; }
+        public DbSet<StatusModel> Statuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
