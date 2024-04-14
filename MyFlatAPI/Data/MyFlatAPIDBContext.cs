@@ -10,6 +10,8 @@ namespace MyFlatAPI.Data
     {
         public MyFlatAPIDBContext(DbContextOptions<MyFlatAPIDBContext> options) : base(options) { }
 
+        public DbSet<OrderModel> Order { get; set; }
+
         public DbSet<ServiceModel> Service { get; set; }
 
         public DbSet<StatusModel> Status { get; set; }
