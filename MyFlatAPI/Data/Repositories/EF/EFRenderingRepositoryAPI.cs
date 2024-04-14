@@ -1,4 +1,5 @@
-﻿using MyFlatAPI.Data.Repositories.Abstract;
+﻿using MyFlatAPI.Data.Models.Rendering;
+using MyFlatAPI.Data.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,27 @@ namespace MyFlatAPI.Data.Repositories.EF
             };
 
             return names;
+        }
+
+        public List<ServiceOrdersCountModel> GetServiceOrdersCount()
+        {
+            List<ServiceOrdersCountModel> serviceOrdersCounts = new List<ServiceOrdersCountModel>();
+
+            ServiceOrdersCountModel serviceOrdersCountModel;
+
+            List<string> serviceNames = GetServiceNames();
+
+            foreach (var serviceName in serviceNames)
+            {
+                serviceOrdersCountModel = new ServiceOrdersCountModel
+                {
+                    ServiceName = serviceName,
+                    OrdersCount = _context.Orders.Where(o => o.ServiceName == serviceName).Count()
+                };
+                serviceOrdersCounts.Add(serviceOrdersCountModel);
+            }
+
+            return serviceOrdersCounts;
         }
     }
 }
