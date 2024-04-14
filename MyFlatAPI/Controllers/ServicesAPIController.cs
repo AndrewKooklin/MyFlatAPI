@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFlatAPI.Data;
+using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Controllers
 {
@@ -21,6 +22,13 @@ namespace MyFlatAPI.Controllers
         public List<string> GetServiceNames()
         {
             return _dataManager.Rendering.GetServiceNames();
+        }
+
+        [HttpGet]
+        [Route("[controller]/{GetServiceOrdersCount}")]
+        public List<ServiceOrdersCountModel> GetServiceOrdersCount()
+        {
+            return _dataManager.Rendering.GetServiceOrdersCount();
         }
     }
 }
