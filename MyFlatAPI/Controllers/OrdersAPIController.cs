@@ -8,11 +8,11 @@ using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Controllers
 {
-    public class OrdersController : Controller
+    public class OrdersAPIController : Controller
     {
         private DataManager _dataManager;
 
-        public OrdersController(DataManager dataManager)
+        public OrdersAPIController(DataManager dataManager)
         {
             _dataManager = dataManager;
         }

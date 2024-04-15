@@ -36,6 +36,18 @@ namespace MyFlatAPI.Data.Repositories.EF
             return names;
         }
 
+        public List<string> GetStatusNames()
+        {
+            List<string> names = new List<string>();
+
+            foreach (var category in _context.Statuses)
+            {
+                names.Add(category.StatusName);
+            };
+
+            return names;
+        }
+
         public List<ServiceOrdersCountModel> GetServiceOrdersCount()
         {
             List<ServiceOrdersCountModel> serviceOrdersCounts = new List<ServiceOrdersCountModel>();
