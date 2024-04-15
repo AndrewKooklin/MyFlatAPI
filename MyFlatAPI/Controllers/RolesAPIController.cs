@@ -26,13 +26,13 @@ namespace MyFlatAPI.Controllers
             return roles;
         }
 
-        [HttpPost("/api/[controller]/CreateRole/{IdentityRole?}")]
+        [HttpPost("[controller]/CreateRole/{IdentityRole?}")]
         public bool CreateRole(IdentityRole role)
         {
             return _dataManager.Accounts.CreateRole(role).GetAwaiter().GetResult();
         }
 
-        [HttpPost("/api/[controller]/DeleteRole/{id?}")]
+        [HttpPost("[controller]/DeleteRole/{id?}")]
         public bool DeleteRole(string id)
         {
             return _dataManager.Accounts.DeleteRole(id).GetAwaiter().GetResult();
