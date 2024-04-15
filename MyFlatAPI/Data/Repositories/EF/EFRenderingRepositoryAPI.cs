@@ -1,6 +1,6 @@
 ﻿using MyFlatAPI.Data.Models.Rendering;
 using MyFlatAPI.Data.Repositories.Abstract;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +10,8 @@ namespace MyFlatAPI.Data.Repositories.EF
     public class EFRenderingRepositoryAPI : IRenderingRepositoryAPI
     {
         private readonly MyFlatAPIDBContext _context;
+        private int countBeforeAdded;
+        private int countAfterAdded;
 
         public EFRenderingRepositoryAPI(MyFlatAPIDBContext context)
         {
@@ -47,6 +49,28 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
 
             return serviceOrdersCounts;
+        }
+
+        public async Task<bool> SaveOrder(OrderModel order)
+        {
+            countBeforeAdded = await _context.Orders.CountAsync();
+
+            if (order.Id == default)
+            {
+                //_context.Entry(phoneBookRecord).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                await _context.Orders.AddAsync(order);
+            }
+            _context.SaveChanges();
+
+            countAfterAdded = await _context.Orders.CountAsync();
+            if (countAfterAdded > countBeforeAdded)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

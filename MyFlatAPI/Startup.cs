@@ -61,6 +61,7 @@ namespace MyFlatAPI
             services.AddHttpContextAccessor();
             services.AddRouting(options =>
             {
+                options.ConstraintMap.Add("OrderModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("LoginModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("RegisterModel", typeof(ProvaRouteConstraint));
             });
