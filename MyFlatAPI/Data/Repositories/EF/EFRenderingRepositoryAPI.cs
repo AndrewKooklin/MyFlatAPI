@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 
 namespace MyFlatAPI.Data.Repositories.EF
 {
@@ -16,6 +17,11 @@ namespace MyFlatAPI.Data.Repositories.EF
         public EFRenderingRepositoryAPI(MyFlatAPIDBContext context)
         {
             _context = context;
+        }
+
+        public List<OrderModel> GetAllOrders()
+        {
+            return _context.Orders.ToList();
         }
 
         public List<string> GetServiceNames()

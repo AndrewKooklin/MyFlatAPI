@@ -29,14 +29,8 @@ namespace MyFlatAPI.Data.Models.Rendering
 
         [Required]
         public string ServiceName { get; set; }
-
-        [NotMapped]
-        public IEnumerable<SelectListItem> ServiceNames { get; set; }
-
+        
         [Required]
         public string StatusName { get; set; }
-
-        [NotMapped]
-        public IEnumerable<SelectListItem> StatusNames { get; set; }
     }
 }

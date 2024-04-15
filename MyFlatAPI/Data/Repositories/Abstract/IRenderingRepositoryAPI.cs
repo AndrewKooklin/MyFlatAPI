@@ -13,5 +13,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         List<ServiceOrdersCountModel> GetServiceOrdersCount();
 
         Task<bool> SaveOrder(OrderModel order);
+
+        List<OrderModel> GetAllOrders();
     }
 }

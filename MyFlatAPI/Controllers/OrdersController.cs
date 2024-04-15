@@ -22,5 +22,11 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.Rendering.SaveOrder(order).GetAwaiter().GetResult();
         }
+
+        [HttpGet("[controller]/GetAllOrders")]
+        public List<OrderModel> GetAllOrders()
+        {
+            return _dataManager.Rendering.GetAllOrders();
+        }
     }
 }
