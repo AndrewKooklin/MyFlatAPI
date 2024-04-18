@@ -90,5 +90,21 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public async Task<OrderModel> GetOrderById(int id)
+        {
+            return await _context.Orders.FirstAsync(o => o.Id == id);
+        }
+
+        public async void ChangeStatusOrder(ChangeStatusModel changeStatusModel)
+        {
+            OrderModel orderModel = await GetOrderById(changeStatusModel.Id);
+
+            orderModel.StatusName = changeStatusModel.Status;
+
+            _context.Entry(orderModel).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.Orders.Update(orderModel);
+            _context.SaveChanges();
+        }
     }
 }

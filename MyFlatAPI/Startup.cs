@@ -88,7 +88,7 @@ namespace MyFlatAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name:"default",
-                                             pattern:"{controller=RolesAPI}/{action=GetRoles}/{id?}");
+                                             pattern:"{controller=RolesAPI}/{action=GetRoles}/{id?}/{param?}");
                 //endpoints.MapControllerRoute(name: "default",
                 //    pattern: "{controller=RolesAPI}/{action=GetRoles}/{id?}");
             });

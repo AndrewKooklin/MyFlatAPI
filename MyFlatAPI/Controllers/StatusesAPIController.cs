@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFlatAPI.Data;
+using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Controllers
 {
@@ -21,6 +22,12 @@ namespace MyFlatAPI.Controllers
         public List<string> GetStatusNames()
         {
             return _dataManager.Rendering.GetStatusNames();
+        }
+
+        [HttpPost("[controller]/ChangeStatusOrder/{ChangeStatusModel?}")]
+        public void ChangeStatusOrder(ChangeStatusModel changeStatusModel)
+        {
+            _dataManager.Rendering.ChangeStatusOrder(changeStatusModel);
         }
     }
 }
