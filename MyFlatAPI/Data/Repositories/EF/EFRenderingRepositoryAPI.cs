@@ -24,6 +24,11 @@ namespace MyFlatAPI.Data.Repositories.EF
             return _context.Orders.ToList();
         }
 
+        public List<OrderModel> GetOrdersByService(string serviceName)
+        {
+            return _context.Orders.Where(o => o.ServiceName == serviceName).ToList();
+        }
+
         public List<string> GetServiceNames()
         {
             List<string> names = new List<string>();
@@ -107,5 +112,6 @@ namespace MyFlatAPI.Data.Repositories.EF
             _context.Orders.Update(orderModel);
             _context.SaveChanges();
         }
+
     }
 }
