@@ -32,7 +32,7 @@ namespace MyFlatAPI.Controllers
         [HttpGet("[controller]/GetOrdersByService/{serviceName?}")]
         public List<OrderModel> GetOrdersByService([FromBody] string serviceName)
         {
-            return _dataManager.Rendering.();
+            return _dataManager.Rendering.GetOrdersByService(serviceName);
         }
     }
 }

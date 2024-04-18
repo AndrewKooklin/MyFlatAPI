@@ -18,7 +18,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         List<OrderModel> GetAllOrders();
 
-        List<OrderModel> GetOrdersByService();
+        List<OrderModel> GetOrdersByService(string serviceName);
 
         OrderModel GetOrderById(int id);
 
