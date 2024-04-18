@@ -25,7 +25,7 @@ namespace MyFlatAPI.Controllers
         }
 
         [HttpPost("[controller]/ChangeStatusOrder/{ChangeStatusModel?}")]
-        public void ChangeStatusOrder(ChangeStatusModel changeStatusModel)
+        public void ChangeStatusOrder([FromBody] ChangeStatusModel changeStatusModel)
         {
             _dataManager.Rendering.ChangeStatusOrder(changeStatusModel);
         }

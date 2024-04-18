@@ -18,7 +18,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         List<OrderModel> GetAllOrders();
 
-        Task<OrderModel> GetOrderById(int id);
+        OrderModel GetOrderById(int id);
 
         void ChangeStatusOrder(ChangeStatusModel changeStatusModel);
     }

@@ -91,14 +91,15 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
-        public async Task<OrderModel> GetOrderById(int id)
+        public OrderModel GetOrderById(int id)
         {
-            return await _context.Orders.FirstAsync(o => o.Id == id);
+            return _context.Orders.FirstOrDefault(o => o.Id == id);
         }
 
-        public async void ChangeStatusOrder(ChangeStatusModel changeStatusModel)
+        public void ChangeStatusOrder(ChangeStatusModel changeStatusModel)
         {
-            OrderModel orderModel = await GetOrderById(changeStatusModel.Id);
+            OrderModel orderModel = new OrderModel();
+            orderModel = GetOrderById(changeStatusModel.Id);
 
             orderModel.StatusName = changeStatusModel.Status;
 

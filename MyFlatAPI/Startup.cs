@@ -64,8 +64,10 @@ namespace MyFlatAPI
                 options.ConstraintMap.Add("OrderModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("LoginModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("RegisterModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("ChangeStatusModel", typeof(ProvaRouteConstraint));
             });
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
