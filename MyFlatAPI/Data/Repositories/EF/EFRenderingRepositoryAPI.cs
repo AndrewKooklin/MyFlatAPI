@@ -29,6 +29,11 @@ namespace MyFlatAPI.Data.Repositories.EF
             return _context.Orders.Where(o => o.ServiceName == serviceName).ToList();
         }
 
+        public List<OrderModel> GetOrdersByPeriod(PeriodModel model)
+        {
+            return _context.Orders.Where(o => o.DateCreate >= model.DateFrom && o.DateCreate <= model.DateTo).ToList();
+        }
+
         public List<string> GetServiceNames()
         {
             List<string> names = new List<string>();
@@ -112,6 +117,5 @@ namespace MyFlatAPI.Data.Repositories.EF
             _context.Orders.Update(orderModel);
             _context.SaveChanges();
         }
-
     }
 }

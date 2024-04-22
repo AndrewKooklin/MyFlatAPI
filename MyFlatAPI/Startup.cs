@@ -62,6 +62,7 @@ namespace MyFlatAPI
             services.AddRouting(options =>
             {
                 options.ConstraintMap.Add("OrderModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("PeriodModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("LoginModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("RegisterModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("ChangeStatusModel", typeof(ProvaRouteConstraint));

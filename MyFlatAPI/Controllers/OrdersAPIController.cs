@@ -34,5 +34,11 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.Rendering.GetOrdersByService(serviceName);
         }
+
+        [HttpGet("[controller]/GetOrdersByPeriod/{PeriodModel?}")]
+        public List<OrderModel> GetOrdersByPeriod([FromBody] PeriodModel model)
+        {
+            return _dataManager.Rendering.GetOrdersByPeriod(model);
+        }
     }
 }
