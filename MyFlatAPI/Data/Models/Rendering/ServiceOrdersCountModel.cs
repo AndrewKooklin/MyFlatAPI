@@ -9,6 +9,6 @@ namespace MyFlatAPI.Data.Models.Rendering
     {
         public string ServiceName { get; set; }
 
-        public int OrdersCount { get; set; }
+        public int OrdersByServiceCount { get; set; }
     }
 }

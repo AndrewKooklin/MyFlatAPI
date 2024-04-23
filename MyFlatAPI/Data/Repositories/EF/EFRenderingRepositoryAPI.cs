@@ -75,7 +75,7 @@ namespace MyFlatAPI.Data.Repositories.EF
                 serviceOrdersCountModel = new ServiceOrdersCountModel
                 {
                     ServiceName = serviceName,
-                    OrdersCount = _context.Orders.Where(o => o.ServiceName == serviceName).Count()
+                    OrdersByServiceCount = _context.Orders.Where(o => o.ServiceName == serviceName).Count()
                 };
                 serviceOrdersCounts.Add(serviceOrdersCountModel);
             }
