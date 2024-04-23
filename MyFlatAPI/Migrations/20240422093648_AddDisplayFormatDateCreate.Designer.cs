@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyFlatAPI.Data;
 
 namespace MyFlatAPI.Migrations
 {
     [DbContext(typeof(MyFlatAPIDBContext))]
-    partial class MyFlatAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240422093648_AddDisplayFormatDateCreate")]
+    partial class AddDisplayFormatDateCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,14 +50,14 @@ namespace MyFlatAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "55d7828f-7c75-42d4-9d0e-76a6b126315f",
+                            Id = "67c3c661-efd8-4aa8-85d5-0d58f2b0acf1",
                             ConcurrencyStamp = "6d5c54e4-667f-4b61-9ac9-d61039cdf950",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "1d66301d-df54-4a11-b795-7b9758599952",
+                            Id = "e971dd3b-8ba9-476c-abec-4dcfc93ca260",
                             ConcurrencyStamp = "302dc497-bf7b-49fa-af47-cc1123b3fe8e",
                             Name = "User",
                             NormalizedName = "USER"

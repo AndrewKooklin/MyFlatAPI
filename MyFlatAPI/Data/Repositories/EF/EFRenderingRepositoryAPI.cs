@@ -31,7 +31,11 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public List<OrderModel> GetOrdersByPeriod(PeriodModel model)
         {
-            return _context.Orders.Where(o => o.DateCreate >= model.DateFrom && o.DateCreate <= model.DateTo).ToList();
+            List<OrderModel> orders = new List<OrderModel>();
+
+            orders = _context.Orders.Where(o => (o.DateCreate >= model.DateFrom && o.DateCreate <= model.DateTo)).ToList();
+
+            return orders;
         }
 
         public List<string> GetServiceNames()

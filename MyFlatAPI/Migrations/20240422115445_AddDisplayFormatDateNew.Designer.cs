@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyFlatAPI.Data;
 
 namespace MyFlatAPI.Migrations
 {
     [DbContext(typeof(MyFlatAPIDBContext))]
-    partial class MyFlatAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240422115445_AddDisplayFormatDateNew")]
+    partial class AddDisplayFormatDateNew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

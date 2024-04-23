@@ -11,6 +11,8 @@ namespace MyFlatAPI.Data.Models.Rendering
     public class OrderModel : BaseModel
     {
         [Required]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy HH:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime DateCreate { get; set; }
 
         [Required]
