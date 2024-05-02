@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyFlatAPI.Data.Models;
+using MyFlatAPI.Data.Models.EditPages;
 using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Data
@@ -15,6 +16,12 @@ namespace MyFlatAPI.Data
         public DbSet<ServiceModel> Services { get; set; }
 
         public DbSet<StatusModel> Statuses { get; set; }
+
+        public DbSet<TopMenuLinkNameModel> LinkNames { get; set; }
+
+        public DbSet<RandomPhraseModel> RandomPhrases { get; set; }
+
+        public DbSet<HomePagePlaceholderModel> HomePagePlaceholders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
