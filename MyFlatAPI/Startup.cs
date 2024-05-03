@@ -38,6 +38,7 @@ namespace MyFlatAPI
             
             services.AddTransient<IAccountRepositoryAPI, EFAccountRepositoryAPI>();
             services.AddTransient<IRenderingRepositoryAPI, EFRenderingRepositoryAPI>();
+            services.AddTransient<IPageEditorRepositoryAPI, EFPageEditorRepositoryAPI>();
             services.AddTransient<DataManager>();
 
             //подключаем контекст БД

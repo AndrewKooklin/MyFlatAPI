@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyFlatAPI.Data;
+using MyFlatAPI.Data.Models.EditPages;
 
 namespace MyFlatAPI.Controllers
 {
     public class HomePageEditAPIController : Controller
     {
-        public IActionResult EditTopMenuLinks()
+        private DataManager _dataManager;
+
+        public HomePageEditAPIController(DataManager dataManager)
         {
-            return View();
+            _dataManager = dataManager;
+        }
+
+        public HomePagePlaceholderModel GetHomePagePlaceholder()
+        {
+            return _dataManager
         }
     }
 }

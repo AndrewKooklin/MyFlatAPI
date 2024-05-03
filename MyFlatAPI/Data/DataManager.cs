@@ -8,11 +8,15 @@ namespace MyFlatAPI.Data
 
         public IRenderingRepositoryAPI Rendering { get; set; }
 
+        public IPageEditorRepositoryAPI PageEditor { get; set; }
+
         public DataManager(IAccountRepositoryAPI accounts,
-                           IRenderingRepositoryAPI rendering)
+                           IRenderingRepositoryAPI rendering,
+                           IPageEditorRepositoryAPI pageEditor)
         {
             Accounts = accounts;
             Rendering = rendering;
+            PageEditor = pageEditor;
         }
     }
 }
