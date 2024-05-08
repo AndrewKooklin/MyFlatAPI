@@ -52,5 +52,24 @@ namespace MyFlatAPI.Data.Repositories.EF
 
             return hpm;
         }
+
+        public bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model)
+        {
+            TopMenuLinkNameModel linkName = new TopMenuLinkNameModel();
+            linkName = _context.LinkNames.FirstOrDefault(l => l.Id == model.Id);
+
+            linkName.LinkName = model.LinkName;
+
+            var number = _context.SaveChanges();
+
+            if(number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

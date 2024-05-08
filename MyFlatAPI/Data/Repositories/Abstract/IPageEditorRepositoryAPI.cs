@@ -9,5 +9,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
     public interface IPageEditorRepositoryAPI
     {
         HomePagePlaceholderModel GetHomePagePlaceholder();
+
+        bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model);
     }
 }

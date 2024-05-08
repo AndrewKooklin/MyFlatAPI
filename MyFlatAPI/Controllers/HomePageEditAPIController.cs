@@ -17,9 +17,16 @@ namespace MyFlatAPI.Controllers
             _dataManager = dataManager;
         }
 
+        [HttpGet("[controller]/GetHomePagePlaceholder")]
         public HomePagePlaceholderModel GetHomePagePlaceholder()
         {
-            return _dataManager
+            return _dataManager.PageEditor.GetHomePagePlaceholder();
+        }
+
+        [HttpPost("[controller]/ChangeNameLinkTopMenu/{TopMenuLinkNameModel?}")]
+        public bool ChangeNameLinkTopMenu([FromBody] TopMenuLinkNameModel model)
+        {
+            return _dataManager.PageEditor.ChangeNameLinkTopMenu(model);
         }
     }
 }
