@@ -11,5 +11,9 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         HomePagePlaceholderModel GetHomePagePlaceholder();
 
         bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model);
+
+        bool AddRandomPhrase(RandomPhraseModel model);
+
+        bool DeleteRandomPhrase(int id);
     }
 }

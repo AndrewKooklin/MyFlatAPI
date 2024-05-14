@@ -28,5 +28,13 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.PageEditor.ChangeNameLinkTopMenu(model);
         }
+
+        [HttpPost("[controller]/AddRandomPhrase/{RandomPhraseModel?}")]
+        public bool AddRandomPhrase([FromBody] RandomPhraseModel model)
+        {
+            return _dataManager.PageEditor.AddRandomPhrase(model);
+        }
+
+        
     }
 }

@@ -29,6 +29,21 @@ namespace MyFlatAPI.Data.Repositories.EF
             return _context.RandomPhrases.ToList();
         }
 
+        public bool AddRandomPhrase(RandomPhraseModel phraseModel)
+        {
+            _context.RandomPhrases.Add(phraseModel);
+
+            var number = _context.SaveChanges();
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public HomePagePlaceholderModel GetPlaceholders()
         {
             HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
@@ -63,6 +78,22 @@ namespace MyFlatAPI.Data.Repositories.EF
             var number = _context.SaveChanges();
 
             if(number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteRandomPhrase(int id)
+        {
+            _context.RandomPhrases.Remove(new RandomPhraseModel { Id = id });
+
+            var number = _context.SaveChanges();
+
+            if (number > 0)
             {
                 return true;
             }
