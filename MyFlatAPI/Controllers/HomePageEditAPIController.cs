@@ -35,10 +35,40 @@ namespace MyFlatAPI.Controllers
             return _dataManager.PageEditor.AddRandomPhrase(model);
         }
 
+        [HttpPost("[controller]/ChangeRandomPhrase/{RandomPhraseModel?}")]
+        public bool ChangeRandomPhrase([FromBody] RandomPhraseModel model)
+        {
+            return _dataManager.PageEditor.ChangeRandomPhrase(model);
+        }
+
         [HttpPost("[controller]/DeleteRandomPhrase/{id?}")]
         public bool DeleteRandomPhrase(int id)
         {
             return _dataManager.PageEditor.DeleteRandomPhrase(id);
+        }
+
+        [HttpPost("[controller]/ChangeLeftCentralAreaText/{HomePagePlaceholderModel?}")]
+        public bool ChangeLeftCentralAreaText([FromBody] HomePagePlaceholderModel model)
+        {
+            return _dataManager.PageEditor.ChangeLeftCentralAreaText(model);
+        }
+
+        [HttpPost("[controller]/ChangeMainImage/{HomePagePlaceholderModel?}")]
+        public bool ChangeMainImage([FromBody] HomePagePlaceholderModel model)
+        {
+            return _dataManager.PageEditor.ChangeMainImage(model);
+        }
+
+        [HttpPost("[controller]/ChangeBottomAreaHeader/{HomePagePlaceholderModel?}")]
+        public bool ChangeBottomAreaHeader([FromBody] HomePagePlaceholderModel model)
+        {
+            return _dataManager.PageEditor.ChangeBottomAreaHeader(model);
+        }
+
+        [HttpPost("[controller]/ChangeBottomAreaContent/{HomePagePlaceholderModel?}")]
+        public bool ChangeBottomAreaContent([FromBody] HomePagePlaceholderModel model)
+        {
+            return _dataManager.PageEditor.ChangeBottomAreaContent(model);
         }
     }
 }

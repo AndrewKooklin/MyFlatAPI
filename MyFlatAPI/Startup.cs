@@ -69,6 +69,7 @@ namespace MyFlatAPI
                 options.ConstraintMap.Add("ChangeStatusModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("TopMenuLinkNameModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("RandomPhraseModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("HomePagePlaceholderModel", typeof(ProvaRouteConstraint));
             });
         }
         

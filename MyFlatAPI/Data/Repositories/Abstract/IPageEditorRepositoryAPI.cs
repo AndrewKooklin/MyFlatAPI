@@ -14,6 +14,16 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         bool AddRandomPhrase(RandomPhraseModel model);
 
+        bool ChangeRandomPhrase(RandomPhraseModel model);
+
         bool DeleteRandomPhrase(int id);
+
+        bool ChangeLeftCentralAreaText(HomePagePlaceholderModel model);
+
+        bool ChangeMainImage(HomePagePlaceholderModel model);
+
+        bool ChangeBottomAreaHeader(HomePagePlaceholderModel model);
+
+        bool ChangeBottomAreaContent(HomePagePlaceholderModel model);
     }
 }

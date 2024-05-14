@@ -12,6 +12,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         private readonly MyFlatAPIDBContext _context;
         private int countBeforeAdded;
         private int countAfterAdded;
+        int number;
 
         public EFPageEditorRepositoryAPI(MyFlatAPIDBContext context)
         {
@@ -33,7 +34,43 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             _context.RandomPhrases.Add(phraseModel);
 
-            var number = _context.SaveChanges();
+            number = _context.SaveChanges();
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeRandomPhrase(RandomPhraseModel model)
+        {
+            RandomPhraseModel rpm = new RandomPhraseModel();
+
+            rpm = _context.RandomPhrases.FirstOrDefault(p => p.Id == model.Id);
+
+            rpm.Phrase = model.Phrase;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteRandomPhrase(int id)
+        {
+            _context.RandomPhrases.Remove(new RandomPhraseModel { Id = id });
+
+            number = _context.SaveChanges();
+
             if (number > 0)
             {
                 return true;
@@ -75,7 +112,7 @@ namespace MyFlatAPI.Data.Repositories.EF
 
             linkName.LinkName = model.LinkName;
 
-            var number = _context.SaveChanges();
+            number = _context.SaveChanges();
 
             if(number > 0)
             {
@@ -87,11 +124,75 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
-        public bool DeleteRandomPhrase(int id)
+        public bool ChangeLeftCentralAreaText(HomePagePlaceholderModel model)
         {
-            _context.RandomPhrases.Remove(new RandomPhraseModel { Id = id });
+            HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
 
-            var number = _context.SaveChanges();
+            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+
+            hphm.LeftCentralAreaText = model.LeftCentralAreaText;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeMainImage(HomePagePlaceholderModel model)
+        {
+            HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
+
+            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+
+            hphm.MainPicture = model.MainPicture;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeBottomAreaHeader(HomePagePlaceholderModel model)
+        {
+            HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
+
+            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+
+            hphm.BottomAreaHeader = model.BottomAreaHeader;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeBottomAreaContent(HomePagePlaceholderModel model)
+        {
+            HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
+
+            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+
+            hphm.BottomAreaContent = model.BottomAreaContent;
+
+            number = _context.SaveChanges();
 
             if (number > 0)
             {
