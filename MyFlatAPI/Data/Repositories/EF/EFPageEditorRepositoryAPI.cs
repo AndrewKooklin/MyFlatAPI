@@ -13,21 +13,24 @@ namespace MyFlatAPI.Data.Repositories.EF
         private int countBeforeAdded;
         private int countAfterAdded;
         int number;
+        List<TopMenuLinkNameModel> linkNames = new List<TopMenuLinkNameModel>();
+        List<RandomPhraseModel> randomPhrases = new List<RandomPhraseModel>();
 
         public EFPageEditorRepositoryAPI(MyFlatAPIDBContext context)
         {
             _context = context;
         }
 
-
         public List<TopMenuLinkNameModel> GetTopMenuLinkNames()
         {
-            return _context.LinkNames.ToList();
+            linkNames = _context.LinkNames.ToList();
+            return linkNames;
         }
 
         public List<RandomPhraseModel> GetRandomPhrases()
         {
-            return _context.RandomPhrases.ToList();
+            randomPhrases = _context.RandomPhrases.ToList();
+            return randomPhrases;
         }
 
         public bool AddRandomPhrase(RandomPhraseModel phraseModel)
@@ -94,6 +97,8 @@ namespace MyFlatAPI.Data.Repositories.EF
         public HomePagePlaceholderModel GetHomePagePlaceholder()
         {
             HomePagePlaceholderModel hpm = new HomePagePlaceholderModel();
+
+            TopMenuLinkNameModel linkName = new TopMenuLinkNameModel();
 
             hpm.LinkNames = GetTopMenuLinkNames();
             hpm.RandomPhrases = GetRandomPhrases();
