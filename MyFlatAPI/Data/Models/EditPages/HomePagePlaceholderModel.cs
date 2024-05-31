@@ -24,9 +24,6 @@ namespace MyFlatAPI.Data.Models.EditPages
         public string BottomAreaContent { get; set; }
 
         //[NotMapped]
-        //public string JavaScriptToRun { get; set; }
-
-        //[NotMapped]
-        //public string LinkName { get; set; }
+        //public string InputError { get; set; }
     }
 }

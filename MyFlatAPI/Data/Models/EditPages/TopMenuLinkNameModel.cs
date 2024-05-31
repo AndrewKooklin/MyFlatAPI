@@ -10,8 +10,5 @@ namespace MyFlatAPI.Data.Models.EditPages
     public class TopMenuLinkNameModel : BaseModel
     {
         public string LinkName { get; set; }
-
-        [NotMapped]
-        public string InputError { get; set; }
     }
 }
