@@ -15,6 +15,9 @@ namespace MyFlatAPI.Data.Models.EditPages
         [NotMapped]
         public List<RandomPhraseModel> RandomPhrases { get; set; }
 
+        [NotMapped]
+        public string InputAddPhraseError { get; set; }
+
         public string LeftCentralAreaText { get; set; }
 
         public byte[] MainPicture { get; set; }
