@@ -84,30 +84,22 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
-        public HomePagePlaceholderModel GetPlaceholders()
-        {
-            HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
-            var ph = _context.HomePagePlaceholders.ToArray();
-            hphm = ph[0];
+        //public HomePagePlaceholderModel GetPlaceholders()
+        //{
+        //    var hphm = _context.HomePagePlaceholders.FirstOrDefault(p => p.Id == 3);
 
-            return hphm;
-        }
+        //    return hphm;
+        //}
 
 
         public HomePagePlaceholderModel GetHomePagePlaceholder()
         {
-            HomePagePlaceholderModel hpm = new HomePagePlaceholderModel();
+            var placeHolder = _context.HomePagePlaceholders.FirstOrDefault();
 
-            TopMenuLinkNameModel linkName = new TopMenuLinkNameModel();
+            placeHolder.LinkNames = GetTopMenuLinkNames();
+            placeHolder.RandomPhrases = GetRandomPhrases();
 
-            hpm.LinkNames = GetTopMenuLinkNames();
-            hpm.RandomPhrases = GetRandomPhrases();
-            var placeHolders = GetPlaceholders();
-            hpm.LeftCentralAreaText = placeHolders.LeftCentralAreaText;
-            hpm.BottomAreaHeader = placeHolders.BottomAreaHeader;
-            hpm.BottomAreaContent = placeHolders.BottomAreaContent;
-
-            return hpm;
+            return placeHolder;
         }
 
         public bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model)
