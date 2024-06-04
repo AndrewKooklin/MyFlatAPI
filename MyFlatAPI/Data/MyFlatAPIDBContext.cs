@@ -23,6 +23,8 @@ namespace MyFlatAPI.Data
 
         public DbSet<HomePagePlaceholderModel> HomePagePlaceholders { get; set; }
 
+        public DbSet<ProjectModel> Projects { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
