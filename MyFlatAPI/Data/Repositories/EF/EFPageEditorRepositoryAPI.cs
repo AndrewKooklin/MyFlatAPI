@@ -224,5 +224,27 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             return _context.Projects.FirstOrDefault(p => p.Id == id);
         }
+
+        public bool ChangeProject(ProjectModel model)
+        {
+            ProjectModel project = new ProjectModel();
+
+            var projectFromDB = _context.Projects.FirstOrDefault(m => m.Id == model.Id);
+
+            projectFromDB.ProjectHeader = model.ProjectHeader;
+            projectFromDB.ProjectDescription = model.ProjectDescription;
+            projectFromDB.ProjectImage = model.ProjectImage;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

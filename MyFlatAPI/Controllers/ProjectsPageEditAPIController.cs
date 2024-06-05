@@ -34,6 +34,12 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.PageEditor.GetProjectById(id);
         }
-        
+
+        [HttpPost("[controller]/ChangeProject/{ProjectModel?}")]
+        public bool ChangeProject([FromBody] ProjectModel model)
+        {
+            return _dataManager.PageEditor.ChangeProject(model);
+        }
+
     }
 }

@@ -32,5 +32,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         bool AddProjectToDB(ProjectModel model);
 
         ProjectModel GetProjectById(int id);
+
+        bool ChangeProject(ProjectModel model);
     }
 }
