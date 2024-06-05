@@ -27,6 +27,10 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         bool ChangeBottomAreaContent(HomePagePlaceholderModel model);
 
+        List<ProjectModel> GetProjectsFromDB();
+
         bool AddProjectToDB(ProjectModel model);
+
+        ProjectModel GetProjectById(int id);
     }
 }

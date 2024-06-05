@@ -24,14 +24,12 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public List<TopMenuLinkNameModel> GetTopMenuLinkNames()
         {
-            linkNames = _context.LinkNames.ToList();
-            return linkNames;
+            return _context.LinkNames.ToList();
         }
 
         public List<RandomPhraseModel> GetRandomPhrases()
         {
-            randomPhrases = _context.RandomPhrases.ToList();
-            return randomPhrases;
+            return _context.RandomPhrases.ToList();
         }
 
         public bool AddRandomPhrase(RandomPhraseModel phraseModel)
@@ -202,6 +200,11 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
+        public List<ProjectModel> GetProjectsFromDB()
+        {
+            return _context.Projects.ToList();
+        }
+
         public bool AddProjectToDB(ProjectModel model)
         {
             _context.Projects.Add(model);
@@ -215,6 +218,11 @@ namespace MyFlatAPI.Data.Repositories.EF
             {
                 return false;
             }
+        }
+
+        public ProjectModel GetProjectById(int id)
+        {
+            return _context.Projects.FirstOrDefault(p => p.Id == id);
         }
     }
 }
