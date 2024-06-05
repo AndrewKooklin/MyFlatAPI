@@ -1,4 +1,5 @@
 ﻿using MyFlatAPI.Data.Models.EditPages;
+using MyFlatAPI.Data.Models.Rendering;
 using MyFlatAPI.Data.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
@@ -191,6 +192,21 @@ namespace MyFlatAPI.Data.Repositories.EF
 
             number = _context.SaveChanges();
 
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool AddProjectToDB(ProjectModel model)
+        {
+            _context.Projects.Add(model);
+
+            number = _context.SaveChanges();
             if (number > 0)
             {
                 return true;

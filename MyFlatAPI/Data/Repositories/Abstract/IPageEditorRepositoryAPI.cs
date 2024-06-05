@@ -1,4 +1,5 @@
 ﻿using MyFlatAPI.Data.Models.EditPages;
+using MyFlatAPI.Data.Models.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,7 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         bool ChangeBottomAreaHeader(HomePagePlaceholderModel model);
 
         bool ChangeBottomAreaContent(HomePagePlaceholderModel model);
+
+        bool AddProjectToDB(ProjectModel model);
     }
 }

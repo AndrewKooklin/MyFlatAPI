@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFlatAPI.Data;
+using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Controllers
 {
@@ -16,9 +17,10 @@ namespace MyFlatAPI.Controllers
             _dataManager = dataManager;
         }
 
-        public IActionResult Index()
+        [HttpPost("[controller]/AddProjectToDB/{ProjectModel?}")]
+        public bool AddProjectToDB([FromBody] ProjectModel model)
         {
-            return View();
+            return _dataManager.PageEditor.AddProjectToDB(model);
         }
     }
 }
