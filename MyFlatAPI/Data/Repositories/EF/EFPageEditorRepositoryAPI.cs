@@ -246,5 +246,21 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public bool DeleteProjectById(int id)
+        {
+            _context.Projects.Remove(new ProjectModel { Id = id });
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

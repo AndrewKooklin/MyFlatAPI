@@ -32,7 +32,8 @@ namespace MyFlatAPI.Controllers
         [HttpGet("[controller]/GetProjectById/{id?}")]
         public ProjectModel GetProjectById(int id)
         {
-            return _dataManager.PageEditor.GetProjectById(id);
+            var project = _dataManager.PageEditor.GetProjectById(id);
+            return project;
         }
 
         [HttpPost("[controller]/ChangeProject/{ProjectModel?}")]
@@ -41,5 +42,10 @@ namespace MyFlatAPI.Controllers
             return _dataManager.PageEditor.ChangeProject(model);
         }
 
+        [HttpPost("[controller]/DeleteProjectById/{id?}")]
+        public bool DeleteProjectById(int id)
+        {
+            return _dataManager.PageEditor.DeleteProjectById(id);
+        }
     }
 }
