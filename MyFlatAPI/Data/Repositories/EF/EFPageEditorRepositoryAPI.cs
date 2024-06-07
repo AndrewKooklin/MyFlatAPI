@@ -262,5 +262,10 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public List<ServiceModel> GetServicesFromDB()
+        {
+            return _context.Services.ToList();
+        }
     }
 }

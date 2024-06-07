@@ -36,5 +36,8 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         bool ChangeProject(ProjectModel model);
 
         bool DeleteProjectById(int id);
+
+        List<ServiceModel> GetServicesFromDB();
+        
     }
 }
