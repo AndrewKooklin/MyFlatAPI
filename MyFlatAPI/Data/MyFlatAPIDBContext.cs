@@ -13,8 +13,6 @@ namespace MyFlatAPI.Data
 
         public DbSet<OrderModel> Orders { get; set; }
 
-        public DbSet<ServiceModel> Services { get; set; }
-
         public DbSet<StatusModel> Statuses { get; set; }
 
         public DbSet<TopMenuLinkNameModel> LinkNames { get; set; }
@@ -24,6 +22,10 @@ namespace MyFlatAPI.Data
         public DbSet<HomePagePlaceholderModel> HomePagePlaceholders { get; set; }
 
         public DbSet<ProjectModel> Projects { get; set; }
+
+        public DbSet<ServiceModel> Services { get; set; }
+
+        public DbSet<PostModel> Posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

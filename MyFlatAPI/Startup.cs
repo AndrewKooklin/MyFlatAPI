@@ -71,6 +71,8 @@ namespace MyFlatAPI
                 options.ConstraintMap.Add("RandomPhraseModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("HomePagePlaceholderModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("ProjectModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("ServiceModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("PostModel", typeof(ProvaRouteConstraint));
             });
         }
         
