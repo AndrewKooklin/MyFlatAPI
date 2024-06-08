@@ -47,5 +47,15 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         bool DeleteServiceById(int id);
 
+        List<PostModel> GetPostsFromDB();
+
+        bool AddPostToDB(PostModel model);
+
+        PostModel GetPostById(int id);
+
+        bool ChangePost(PostModel model);
+
+        bool DeletePostById(int id);
+
     }
 }

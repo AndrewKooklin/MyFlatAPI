@@ -227,9 +227,9 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public bool ChangeProject(ProjectModel model)
         {
-            ProjectModel project = new ProjectModel();
+            ProjectModel projectFromDB = new ProjectModel();
 
-            var projectFromDB = _context.Projects.FirstOrDefault(m => m.Id == model.Id);
+            projectFromDB = _context.Projects.FirstOrDefault(m => m.Id == model.Id);
 
             projectFromDB.ProjectHeader = model.ProjectHeader;
             projectFromDB.ProjectDescription = model.ProjectDescription;
@@ -290,9 +290,9 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public bool ChangeService(ServiceModel model)
         {
-            ServiceModel project = new ServiceModel();
+            ServiceModel serviceFromDB = new ServiceModel();
 
-            var serviceFromDB = _context.Services.FirstOrDefault(m => m.Id == model.Id);
+            serviceFromDB = _context.Services.FirstOrDefault(m => m.Id == model.Id);
 
             serviceFromDB.ServiceName = model.ServiceName;
             serviceFromDB.ServiceDescription = model.ServiceDescription;
@@ -312,6 +312,70 @@ namespace MyFlatAPI.Data.Repositories.EF
         public bool DeleteServiceById(int id)
         {
             _context.Services.Remove(new ServiceModel { Id = id });
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<PostModel> GetPostsFromDB()
+        {
+            return _context.Posts.ToList();
+        }
+
+        public bool AddPostToDB(PostModel model)
+        {
+            model.PostingDate = DateTime.Now;
+            _context.Posts.Add(model);
+
+            number = _context.SaveChanges();
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public PostModel GetPostById(int id)
+        {
+            return _context.Posts.FirstOrDefault(s => s.Id == id);
+        }
+
+        public bool ChangePost(PostModel model)
+        {
+            PostModel postFromDB = new PostModel();
+
+            postFromDB = _context.Posts.FirstOrDefault(m => m.Id == model.Id);
+
+            postFromDB.PostHeader = model.PostHeader;
+            postFromDB.PostDescription = model.PostDescription;
+            postFromDB.PostImage = model.PostImage;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeletePostById(int id)
+        {
+            _context.Posts.Remove(new PostModel { Id = id });
 
             number = _context.SaveChanges();
 
