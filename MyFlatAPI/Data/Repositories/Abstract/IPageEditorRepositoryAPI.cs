@@ -38,6 +38,14 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         bool DeleteProjectById(int id);
 
         List<ServiceModel> GetServicesFromDB();
-        
+
+        bool AddServiceToDB(ServiceModel model);
+
+        ServiceModel GetServiceById(int id);
+
+        bool ChangeService(ServiceModel model);
+
+        bool DeleteServiceById(int id);
+
     }
 }

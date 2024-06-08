@@ -22,5 +22,30 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.PageEditor.GetServicesFromDB();
         }
+
+        [HttpPost("[controller]/AddServiceToDB/{ServiceModel?}")]
+        public bool AddServiceToDB([FromBody] ServiceModel model)
+        {
+            return _dataManager.PageEditor.AddServiceToDB(model);
+        }
+
+        [HttpGet("[controller]/GetServiceById/{id?}")]
+        public ServiceModel GetServiceById(int id)
+        {
+            var service = _dataManager.PageEditor.GetServiceById(id);
+            return service;
+        }
+
+        [HttpPost("[controller]/ChangeService/{ServiceModel?}")]
+        public bool ChangeService([FromBody] ServiceModel model)
+        {
+            return _dataManager.PageEditor.ChangeService(model);
+        }
+
+        [HttpPost("[controller]/DeleteServiceById/{id?}")]
+        public bool DeleteServiceById(int id)
+        {
+            return _dataManager.PageEditor.DeleteServiceById(id);
+        }
     }
 }

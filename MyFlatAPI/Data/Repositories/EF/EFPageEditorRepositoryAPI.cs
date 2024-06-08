@@ -267,5 +267,62 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             return _context.Services.ToList();
         }
+
+        public bool AddServiceToDB(ServiceModel model)
+        {
+            _context.Services.Add(model);
+
+            number = _context.SaveChanges();
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public ServiceModel GetServiceById(int id)
+        {
+            return _context.Services.FirstOrDefault(s => s.Id == id);
+        }
+
+        public bool ChangeService(ServiceModel model)
+        {
+            ServiceModel project = new ServiceModel();
+
+            var serviceFromDB = _context.Services.FirstOrDefault(m => m.Id == model.Id);
+
+            serviceFromDB.ServiceName = model.ServiceName;
+            serviceFromDB.ServiceDescription = model.ServiceDescription;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteServiceById(int id)
+        {
+            _context.Services.Remove(new ServiceModel { Id = id });
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
