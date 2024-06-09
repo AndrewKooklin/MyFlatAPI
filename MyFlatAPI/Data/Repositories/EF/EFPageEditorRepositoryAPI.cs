@@ -389,9 +389,9 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
-        public List<ContactModel> GetContactsFromDB()
+        public ContactModel GetContactsFromDB()
         {
-            return _context.Contacts.ToList();
+            return _context.Contacts.FirstOrDefault();
         }
 
         public List<SocialModel> GetSocialLinksFromDB()

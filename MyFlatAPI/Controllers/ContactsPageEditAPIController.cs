@@ -18,7 +18,7 @@ namespace MyFlatAPI.Controllers
         }
 
         [HttpGet("[controller]/GetContactsFromDB")]
-        public List<ContactModel> GetContactsFromDB()
+        public ContactModel GetContactsFromDB()
         {
             return _dataManager.PageEditor.GetContactsFromDB();
         }
