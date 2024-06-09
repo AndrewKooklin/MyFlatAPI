@@ -73,6 +73,8 @@ namespace MyFlatAPI
                 options.ConstraintMap.Add("ProjectModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("ServiceModel", typeof(ProvaRouteConstraint));
                 options.ConstraintMap.Add("PostModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("ContactModel", typeof(ProvaRouteConstraint));
+                options.ConstraintMap.Add("SocialModel", typeof(ProvaRouteConstraint));
             });
         }
         

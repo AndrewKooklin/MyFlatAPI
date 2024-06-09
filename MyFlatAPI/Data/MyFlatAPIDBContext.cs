@@ -27,6 +27,10 @@ namespace MyFlatAPI.Data
 
         public DbSet<PostModel> Posts { get; set; }
 
+        public DbSet<ContactModel> Contacts { get; set; }
+
+        public DbSet<SocialModel> SocialLinks { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
