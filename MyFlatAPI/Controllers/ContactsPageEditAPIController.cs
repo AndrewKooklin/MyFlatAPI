@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFlatAPI.Data;
+using MyFlatAPI.Data.Models.Rendering;
 
 namespace MyFlatAPI.Controllers
 {
@@ -14,6 +15,18 @@ namespace MyFlatAPI.Controllers
         public ContactsPageEditAPIController(DataManager dataManager)
         {
             _dataManager = dataManager;
+        }
+
+        [HttpGet("[controller]/GetContactsFromDB")]
+        public List<ContactModel> GetContactsFromDB()
+        {
+            return _dataManager.PageEditor.GetContactsFromDB();
+        }
+
+        [HttpGet("[controller]/GetSocialLinksFromDB")]
+        public List<SocialModel> GetSocialLinksFromDB()
+        {
+            return _dataManager.PageEditor.GetSocialLinksFromDB();
         }
 
 

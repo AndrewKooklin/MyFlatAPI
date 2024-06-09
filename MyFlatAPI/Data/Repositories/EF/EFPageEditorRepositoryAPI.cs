@@ -388,5 +388,15 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public List<ContactModel> GetContactsFromDB()
+        {
+            return _context.Contacts.ToList();
+        }
+
+        public List<SocialModel> GetSocialLinksFromDB()
+        {
+            return _context.SocialLinks.ToList();
+        }
     }
 }

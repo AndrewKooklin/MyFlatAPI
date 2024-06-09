@@ -57,5 +57,9 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         bool DeletePostById(int id);
 
+        List<ContactModel> GetContactsFromDB();
+
+        List<SocialModel> GetSocialLinksFromDB();
+
     }
 }
