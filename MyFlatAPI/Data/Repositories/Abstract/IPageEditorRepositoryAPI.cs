@@ -61,5 +61,9 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         List<SocialModel> GetSocialLinksFromDB();
 
+        bool ChangeContacts(ContactModel model);
+
+        
+
     }
 }

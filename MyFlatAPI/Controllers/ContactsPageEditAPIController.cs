@@ -29,6 +29,10 @@ namespace MyFlatAPI.Controllers
             return _dataManager.PageEditor.GetSocialLinksFromDB();
         }
 
-
+        [HttpPost("[controller]/ChangeContacts/{ContactModel?}")]
+        public bool ChangeContacts([FromBody] ContactModel model)
+        {
+            return _dataManager.PageEditor.ChangeContacts(model);
+        }
     }
 }

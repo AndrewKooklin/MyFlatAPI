@@ -398,5 +398,27 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             return _context.SocialLinks.ToList();
         }
+
+        public bool ChangeContacts(ContactModel model)
+        {
+            ContactModel cm = new ContactModel();
+
+            cm = _context.Contacts.FirstOrDefault();
+
+            cm.ContactAddress = model.ContactAddress;
+            cm.ContactPhone = model.ContactPhone;
+            cm.ContactEmail = model.ContactEmail;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
