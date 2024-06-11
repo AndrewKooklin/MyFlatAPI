@@ -420,5 +420,21 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public bool AddSocialToDB(SocialModel model)
+        {
+            _context.SocialLinks.Add(model);
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

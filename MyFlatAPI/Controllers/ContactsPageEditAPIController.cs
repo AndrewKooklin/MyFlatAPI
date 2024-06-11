@@ -34,5 +34,11 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.PageEditor.ChangeContacts(model);
         }
+
+        [HttpPost("[controller]/AddSocialToDB/{SocialModel?}")]
+        public bool AddSocialToDB([FromBody] SocialModel model)
+        {
+            return _dataManager.PageEditor.AddSocialToDB(model);
+        }
     }
 }
