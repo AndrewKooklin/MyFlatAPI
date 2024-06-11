@@ -40,5 +40,24 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.PageEditor.AddSocialToDB(model);
         }
+
+        [HttpPost("[controller]/ChangeSocial/{SocialModel?}")]
+        public bool ChangeSocial([FromBody] SocialModel model)
+        {
+            return _dataManager.PageEditor.ChangeSocial(model);
+        }
+
+        [HttpGet("[controller]/GetSocialById/{id?}")]
+        public SocialModel GetSocialById(int id)
+        {
+            var project = _dataManager.PageEditor.GetSocialById(id);
+            return project;
+        }
+
+        [HttpPost("[controller]/DeleteSocialById/{id?}")]
+        public bool DeleteSocialById(int id)
+        {
+            return _dataManager.PageEditor.DeleteSocialById(id);
+        }
     }
 }

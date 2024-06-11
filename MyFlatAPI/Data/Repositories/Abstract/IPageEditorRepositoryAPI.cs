@@ -64,6 +64,12 @@ namespace MyFlatAPI.Data.Repositories.Abstract
         bool ChangeContacts(ContactModel model);
 
         bool AddSocialToDB(SocialModel model);
-        
+
+        bool ChangeSocial(SocialModel model);
+
+        SocialModel GetSocialById(int id);
+
+        bool DeleteSocialById(int id);
+
     }
 }

@@ -436,5 +436,47 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
+
+        public bool ChangeSocial(SocialModel model)
+        {
+            SocialModel sm = new SocialModel();
+
+            sm = _context.SocialLinks.FirstOrDefault(s => s.Id == model.Id);
+
+            sm.SocialLink = model.SocialLink;
+            sm.SocialImage = model.SocialImage;
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public SocialModel GetSocialById(int id)
+        {
+            return _context.SocialLinks.FirstOrDefault(s => s.Id == id);
+        }
+
+        public bool DeleteSocialById(int id)
+        {
+            _context.SocialLinks.Remove(new SocialModel { Id = id });
+
+            number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
