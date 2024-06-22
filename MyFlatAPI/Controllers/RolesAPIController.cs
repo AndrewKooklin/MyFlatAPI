@@ -9,6 +9,7 @@ using MyFlatAPI.Data;
 namespace MyFlatAPI.Controllers
 {
     [ApiController]
+    [Route("[controller]")]
     public class RolesAPIController : Controller
     {
         private DataManager _dataManager;
@@ -19,7 +20,7 @@ namespace MyFlatAPI.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("[controller]/GetRoles")]
         public IEnumerable<IdentityRole> GetRoles()
         {
             var roles = _dataManager.Accounts.GetRoles();

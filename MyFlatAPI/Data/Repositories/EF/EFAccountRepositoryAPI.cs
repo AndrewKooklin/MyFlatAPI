@@ -52,12 +52,6 @@ namespace MyFlatAPI.Data.Repositories.EF
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                if (!String.IsNullOrEmpty(model.Role))
-                {
-                    await _userManager.AddToRoleAsync(user, model.Role);
-                }
-                await _signInManager.SignInAsync(user, isPersistent: false);
-
                 return true;
             }
             else

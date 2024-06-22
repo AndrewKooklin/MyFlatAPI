@@ -48,7 +48,7 @@ namespace MyFlatAPI.Data
                 Name = "User",
                 NormalizedName = "USER",
                 ConcurrencyStamp = "302dc497-bf7b-49fa-af47-cc1123b3fe8e"
-                //Description = "This role can add PhoneBookRecord"
+                //Description = "This role can ..."
             });
         }
     }
