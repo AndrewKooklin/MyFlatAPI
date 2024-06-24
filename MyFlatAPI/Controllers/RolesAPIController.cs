@@ -9,7 +9,6 @@ using MyFlatAPI.Data;
 namespace MyFlatAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class RolesAPIController : Controller
     {
         private DataManager _dataManager;
