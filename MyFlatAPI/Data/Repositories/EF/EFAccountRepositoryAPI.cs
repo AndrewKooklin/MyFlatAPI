@@ -208,7 +208,7 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public async Task<bool> DeleteRoleUser(RoleUserModel model)
         {
-            IdentityUser user = GetUser(model.UserId).GetAwaiter().GetResult();
+            IdentityUser user = await GetUser(model.UserId);
             IdentityResult result = await _userManager.RemoveFromRoleAsync(user, model.Role);
             if (!result.Succeeded)
             {
@@ -242,8 +242,8 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public async Task<bool> DeleteUser(string id)
         {
-            var user = _userManager.FindByIdAsync(id).GetAwaiter().GetResult();
-            IdentityResult result = await _userManager.DeleteAsync(user);
+            //var user = await _userManager.FindByIdAsync(id);
+            IdentityResult result = await _userManager.DeleteAsync(new IdentityUser { Id = id });
             if (result.Succeeded)
             {
                 return true;
