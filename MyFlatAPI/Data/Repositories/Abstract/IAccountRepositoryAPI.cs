@@ -16,6 +16,8 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         Task<bool> CreateUser(RegisterModel model);
 
+        Task<bool> AddNewUser(AddUserModel model);
+
         Task<IdentityUser> GetUser(LoginModel model);
 
         Task<List<string>> GetUserRoles(LoginModel model);

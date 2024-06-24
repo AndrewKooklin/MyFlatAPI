@@ -10,7 +10,6 @@ using MyFlatAPI.Data.Models.Account;
 namespace MyFlatAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class LoginAPIController : Controller
     {
         private readonly DataManager _dataManager;

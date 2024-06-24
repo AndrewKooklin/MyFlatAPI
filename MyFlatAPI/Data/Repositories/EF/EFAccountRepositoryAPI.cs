@@ -60,6 +60,26 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
+        public async Task<bool> AddNewUser(AddUserModel model)
+        {
+            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+                if (!String.IsNullOrEmpty(model.Role))
+                {
+                    await _userManager.AddToRoleAsync(user, model.Role);
+                }
+                await _signInManager.SignInAsync(user, isPersistent: false);
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public async Task<IdentityUser> GetUser(LoginModel model)
         {
             return await _userManager.FindByEmailAsync(model.EMail);

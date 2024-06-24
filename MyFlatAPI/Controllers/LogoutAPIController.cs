@@ -8,7 +8,6 @@ using MyFlatAPI.Data;
 namespace MyFlatAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class LogoutAPIController : Controller
     {
         private readonly DataManager _dataManager;

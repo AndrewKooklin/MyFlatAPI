@@ -60,5 +60,11 @@ namespace MyFlatAPI.Controllers
         {
             return _dataManager.Accounts.DeleteUser(id).GetAwaiter().GetResult();
         }
+
+        [HttpPost("[controller]/AddNewUser/{AddUserModel?}")]
+        public bool AddNewUser([FromBody] AddUserModel model)
+        {
+            return _dataManager.Accounts.AddNewUser(model).GetAwaiter().GetResult();
+        }
     }
 }
