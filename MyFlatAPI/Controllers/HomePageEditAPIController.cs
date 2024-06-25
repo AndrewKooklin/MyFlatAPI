@@ -23,6 +23,12 @@ namespace MyFlatAPI.Controllers
             return _dataManager.PageEditor.GetHomePagePlaceholder();
         }
 
+        [HttpGet("[controller]/GetTopMenuLinkNames")]
+        public List<TopMenuLinkNameModel> GetTopMenuLinkNames()
+        {
+            return _dataManager.PageEditor.GetTopMenuLinkNames();
+        }
+
         [HttpPost("[controller]/ChangeNameLinkTopMenu/{TopMenuLinkNameModel?}")]
         public bool ChangeNameLinkTopMenu([FromBody] TopMenuLinkNameModel model)
         {
