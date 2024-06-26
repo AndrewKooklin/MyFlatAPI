@@ -15,6 +15,10 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model);
 
+        List<RandomPhraseModel> GetRandomPhrases();
+
+        List<string> GetRandomPhraseNames();
+
         bool AddRandomPhrase(RandomPhraseModel model);
 
         bool ChangeRandomPhrase(RandomPhraseModel model);

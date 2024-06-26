@@ -32,6 +32,17 @@ namespace MyFlatAPI.Data.Repositories.EF
             return _context.RandomPhrases.ToList();
         }
 
+        public List<string> GetRandomPhraseNames()
+        {
+            List<string> pNames = new List<string>();
+            var phraseNames = _context.RandomPhrases.ToArray();
+            foreach (var item in phraseNames)
+            {
+                pNames.Add(item.Phrase);
+            }
+            return pNames;
+        }
+
         public bool AddRandomPhrase(RandomPhraseModel phraseModel)
         {
             _context.RandomPhrases.Add(phraseModel);
