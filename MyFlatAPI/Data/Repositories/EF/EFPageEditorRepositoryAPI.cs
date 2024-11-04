@@ -112,11 +112,11 @@ namespace MyFlatAPI.Data.Repositories.EF
             return placeHolder;
         }
 
-        public HomeViewPlaceholderModel GetHomeViewPlaceholder()
-        {
-            var placeHolder = _context.HomePagePlaceholders.FirstOrDefault();
-            return placeHolder;
-        }
+        //public HomeViewPlaceholderModel GetHomeViewPlaceholder()
+        //{
+        //    var placeHolder = _context.HomePagePlaceholders.FirstOrDefault();
+        //    return placeHolder;
+        //}
 
         public bool ChangeNameLinkTopMenu(TopMenuLinkNameModel model)
         {
