@@ -29,6 +29,12 @@ namespace MyFlatAPI.Controllers
             return _dataManager.PageEditor.GetTopMenuLinkNames();
         }
 
+        [HttpGet("[controller]/GetRandomPhrases")]
+        public List<RandomPhraseModel> GetRandomPhrases()
+        {
+            return _dataManager.PageEditor.GetRandomPhrases();
+        }
+
         [HttpGet("[controller]/GetRandomPhraseNames")]
         public List<string> GetRandomPhraseNames()
         {

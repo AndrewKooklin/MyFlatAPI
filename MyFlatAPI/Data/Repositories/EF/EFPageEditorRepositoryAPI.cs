@@ -135,7 +135,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
 
-            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+            hphm = _context.HomePagePlaceholders.FirstOrDefault();
 
             hphm.LeftCentralAreaText = model.LeftCentralAreaText;
 
@@ -155,7 +155,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
 
-            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+            hphm = _context.HomePagePlaceholders.FirstOrDefault();
 
             hphm.MainPicture = model.MainPicture;
 
