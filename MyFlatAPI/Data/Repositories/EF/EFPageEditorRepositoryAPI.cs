@@ -175,7 +175,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
 
-            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+            hphm = _context.HomePagePlaceholders.FirstOrDefault();
 
             hphm.BottomAreaHeader = model.BottomAreaHeader;
 
@@ -195,7 +195,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             HomePagePlaceholderModel hphm = new HomePagePlaceholderModel();
 
-            hphm = _context.HomePagePlaceholders.FirstOrDefault(m => m.Id == model.Id);
+            hphm = _context.HomePagePlaceholders.FirstOrDefault();
 
             hphm.BottomAreaContent = model.BottomAreaContent;
 
