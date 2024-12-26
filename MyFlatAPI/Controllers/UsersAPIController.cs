@@ -55,7 +55,7 @@ namespace MyFlatAPI.Controllers
             return _dataManager.Accounts.DeleteRolesUser(id).GetAwaiter().GetResult();
         }
 
-        [HttpPost("[controller]/DeleteUser/{id?}")]
+        [HttpPost("[controller]/DeleteUser/{id}")]
         public bool DeleteUser(string id)
         {
             return _dataManager.Accounts.DeleteUser(id).GetAwaiter().GetResult();

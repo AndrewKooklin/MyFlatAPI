@@ -70,7 +70,7 @@ namespace MyFlatAPI.Data.Repositories.EF
                 {
                     await _userManager.AddToRoleAsync(user, model.Role);
                 }
-                await _signInManager.SignInAsync(user, isPersistent: false);
+                //await _signInManager.SignInAsync(user, isPersistent: false);
 
                 return true;
             }
@@ -168,9 +168,20 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             UserWithRolesModel userWithRoles = new UserWithRolesModel();
             var user = GetUser(id).GetAwaiter().GetResult();
-            var roles = _userManager.GetRolesAsync(user).GetAwaiter().GetResult().ToList();
-            userWithRoles.User = user;
-            userWithRoles.Roles = roles;
+            List<string> roles;
+            if ((_userManager.GetRolesAsync(user).GetAwaiter().GetResult()) == null)
+            {
+                roles = new List<string>();
+                userWithRoles.User = user;
+                userWithRoles.Roles = roles;
+                return userWithRoles;
+            }
+            else
+            {
+                roles = _userManager.GetRolesAsync(user).GetAwaiter().GetResult().ToList();
+                userWithRoles.User = user;
+                userWithRoles.Roles = roles;
+            }
             return userWithRoles;
         }
 
@@ -243,7 +254,9 @@ namespace MyFlatAPI.Data.Repositories.EF
         public async Task<bool> DeleteUser(string id)
         {
             //var user = await _userManager.FindByIdAsync(id);
-            IdentityResult result = await _userManager.DeleteAsync(new IdentityUser { Id = id });
+            //await _signInManager.SignOutAsync(user, isPersistent: false);
+            var user = await _userManager.FindByIdAsync(id);
+            IdentityResult result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
                 return true;
