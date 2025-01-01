@@ -137,6 +137,27 @@ namespace MyFlatAPI.Data.Repositories.EF
             }
         }
 
+        public bool ChangeRoleName(IdentityRole role)
+        {
+            IdentityRole _role = new IdentityRole();
+
+            _role = _context.Roles.FirstOrDefault(r => r.Id == role.Id);
+
+            _role.Name = role.Name;
+            _role.NormalizedName = role.NormalizedName;
+
+            int number = _context.SaveChanges();
+
+            if (number > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public async Task<bool> DeleteRole(string id)
         {
             IdentityRole role = _roleManager.FindByIdAsync(id).GetAwaiter().GetResult();

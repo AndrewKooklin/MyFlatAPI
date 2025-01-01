@@ -32,6 +32,12 @@ namespace MyFlatAPI.Controllers
             return _dataManager.Accounts.CreateRole(role).GetAwaiter().GetResult();
         }
 
+        [HttpPost("[controller]/ChangeRoleName/{IdentityRole?}")]
+        public bool ChangeRoleName(IdentityRole role)
+        {
+            return _dataManager.Accounts.ChangeRoleName(role);
+        }
+
         [HttpPost("[controller]/DeleteRole/{id?}")]
         public bool DeleteRole(string id)
         {

@@ -28,6 +28,8 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         Task<bool> CreateRole(IdentityRole role);
 
+        bool ChangeRoleName(IdentityRole role);
+
         Task<bool> DeleteRole(string id);
 
         List<IdentityUser> GetUsers();
