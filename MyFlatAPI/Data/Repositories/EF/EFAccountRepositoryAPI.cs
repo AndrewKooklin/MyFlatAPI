@@ -150,7 +150,7 @@ namespace MyFlatAPI.Data.Repositories.EF
             _role = _context.Roles.FirstOrDefault(r => r.Id == role.Id);
 
             _role.Name = role.Name;
-            _role.NormalizedName = role.NormalizedName;
+            _role.NormalizedName = role.Name.ToUpper();
 
             int number = _context.SaveChanges();
 

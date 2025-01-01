@@ -28,9 +28,9 @@ namespace MyFlatAPI.Controllers
 
         [HttpGet]
         [Route("[controller]/GetRoleById/{id?}")]
-        public IdentityRole GetRoleById()
+        public IdentityRole GetRoleById(string id)
         {
-            var role = _dataManager.Accounts.GetRoleById();
+            var role = _dataManager.Accounts.GetRoleById(id);
             return role;
         }
         
