@@ -124,6 +124,12 @@ namespace MyFlatAPI.Data.Repositories.EF
             return roles;
         }
 
+        public IdentityRole GetRoleById(string id)
+        {
+            var role = _roleManager.Roles.FirstOrDefault(r => r.Id == id);
+            return role;
+        }
+
         public async Task<bool> CreateRole(IdentityRole role)
         {
             if (!await _roleManager.RoleExistsAsync(role.Name))

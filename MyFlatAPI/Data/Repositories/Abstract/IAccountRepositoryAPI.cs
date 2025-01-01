@@ -26,6 +26,8 @@ namespace MyFlatAPI.Data.Repositories.Abstract
 
         IEnumerable<IdentityRole> GetRoles();
 
+        IdentityRole GetRoleById(string id);
+
         Task<bool> CreateRole(IdentityRole role);
 
         bool ChangeRoleName(IdentityRole role);

@@ -26,6 +26,15 @@ namespace MyFlatAPI.Controllers
             return roles;
         }
 
+        [HttpGet]
+        [Route("[controller]/GetRoleById/{id?}")]
+        public IdentityRole GetRoleById()
+        {
+            var role = _dataManager.Accounts.GetRoleById();
+            return role;
+        }
+        
+
         [HttpPost("[controller]/CreateRole/{IdentityRole?}")]
         public bool CreateRole(IdentityRole role)
         {
