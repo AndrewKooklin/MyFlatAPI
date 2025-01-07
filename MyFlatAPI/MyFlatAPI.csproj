@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Database\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="Views\**" />
+    <Content Remove="Data\Database\**" />
     <Content Remove="Models\**" />
     <Content Remove="Views\**" />
+    <EmbeddedResource Remove="Data\Database\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Views\**" />
+    <None Remove="Data\Database\**" />
     <None Remove="Models\**" />
     <None Remove="Views\**" />
   </ItemGroup>
@@ -20,8 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Data\Database\MyFlat.mdf" />
-    <None Remove="Data\Database\MyFlat_log.ldf" />
     <None Remove="Data\MyFlat.mdf" />
     <None Remove="Data\MyFlat_log.ldf" />
   </ItemGroup>
@@ -41,10 +43,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Database\" />
   </ItemGroup>
 
 </Project>
