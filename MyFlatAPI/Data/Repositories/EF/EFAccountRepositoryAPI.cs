@@ -147,7 +147,7 @@ namespace MyFlatAPI.Data.Repositories.EF
         {
             IdentityRole _role = new IdentityRole();
 
-            _role = _context.Roles.FirstOrDefault(r => r.Id == role.Id);
+            _role = _roleManager.Roles.FirstOrDefault(r => r.Id == role.Id);
 
             _role.Name = role.Name;
             _role.NormalizedName = role.Name.ToUpper();

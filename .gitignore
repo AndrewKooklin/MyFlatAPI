@@ -50,3 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/MyFlatAPI/Data/Database/MyFlat_log.ldf
+/MyFlatAPI/Data/Database/MyFlat.mdf
