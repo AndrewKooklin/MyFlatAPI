@@ -58,7 +58,6 @@ C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.runtimeconfig.jso
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.runtimeconfig.dev.json
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.pdb
-C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\MyFlatAPI.Views.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\repos\MyFlatAPI\MyFlatAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
