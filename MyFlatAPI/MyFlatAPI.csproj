@@ -8,15 +8,19 @@
     <Compile Remove="Data\Database\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="Views\**" />
+    <Compile Remove="wwwroot\**" />
     <Content Remove="Data\Database\**" />
     <Content Remove="Models\**" />
     <Content Remove="Views\**" />
+    <Content Remove="wwwroot\**" />
     <EmbeddedResource Remove="Data\Database\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Views\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="Data\Database\**" />
     <None Remove="Models\**" />
     <None Remove="Views\**" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
