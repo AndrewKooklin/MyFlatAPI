@@ -220,8 +220,6 @@ namespace MyFlatAPI.Data.Repositories.EF
             {
                 UserWithRolesModel userWithRoles = new UserWithRolesModel();
                 var roles = _userManager.GetRolesAsync(user).GetAwaiter().GetResult().ToList();
-                //var usersList = _context.Users;
-                //var roleUser = _context.UserRoles;
                 userWithRoles.User = user;
                 userWithRoles.Roles = roles;
                 usersWithRoles.Add(userWithRoles);
@@ -280,8 +278,6 @@ namespace MyFlatAPI.Data.Repositories.EF
 
         public async Task<bool> DeleteUser(string id)
         {
-            //var user = await _userManager.FindByIdAsync(id);
-            //await _signInManager.SignOutAsync(user, isPersistent: false);
             var user = await _userManager.FindByIdAsync(id);
             IdentityResult result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)

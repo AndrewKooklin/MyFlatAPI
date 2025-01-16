@@ -89,7 +89,6 @@ namespace MyFlatAPI.Data.Repositories.EF
 
             if (order.Id == default)
             {
-                //_context.Entry(phoneBookRecord).State = Microsoft.EntityFrameworkCore.EntityState.Added;
                 await _context.Orders.AddAsync(order);
             }
             _context.SaveChanges();

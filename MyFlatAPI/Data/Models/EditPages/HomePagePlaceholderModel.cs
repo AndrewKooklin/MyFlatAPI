@@ -25,8 +25,5 @@ namespace MyFlatAPI.Data.Models.EditPages
         public string BottomAreaHeader { get; set; }
 
         public string BottomAreaContent { get; set; }
-
-        //[NotMapped]
-        //public string InputError { get; set; }
     }
 }

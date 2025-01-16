@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MyFlatAPI.Data.Models;
 using MyFlatAPI.Data.Models.EditPages;
 using MyFlatAPI.Data.Models.Rendering;
 

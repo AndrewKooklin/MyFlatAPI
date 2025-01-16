@@ -11,11 +11,7 @@ namespace MyFlatAPI.Data.Repositories.EF
     public class EFPageEditorRepositoryAPI : IPageEditorRepositoryAPI
     {
         private readonly MyFlatAPIDBContext _context;
-        private int countBeforeAdded;
-        private int countAfterAdded;
         int number;
-        List<TopMenuLinkNameModel> linkNames = new List<TopMenuLinkNameModel>();
-        List<RandomPhraseModel> randomPhrases = new List<RandomPhraseModel>();
 
         public EFPageEditorRepositoryAPI(MyFlatAPIDBContext context)
         {
@@ -93,14 +89,6 @@ namespace MyFlatAPI.Data.Repositories.EF
                 return false;
             }
         }
-
-        //public HomePagePlaceholderModel GetPlaceholders()
-        //{
-        //    var hphm = _context.HomePagePlaceholders.FirstOrDefault(p => p.Id == 3);
-
-        //    return hphm;
-        //}
-
 
         public HomePagePlaceholderModel GetHomePagePlaceholder()
         {
