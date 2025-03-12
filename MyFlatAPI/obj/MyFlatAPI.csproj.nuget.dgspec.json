@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj": {}
+    "C:\\Users\\bolt9\\source\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj": {}
   },
   "projects": {
-    "C:\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj": {
+    "C:\\Users\\bolt9\\source\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj",
+        "projectUniqueName": "C:\\Users\\bolt9\\source\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj",
         "projectName": "MyFlatAPI",
-        "projectPath": "C:\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj",
+        "projectPath": "C:\\Users\\bolt9\\source\\repos\\MyFlatAPI\\MyFlatAPI\\MyFlatAPI.csproj",
         "packagesPath": "C:\\Users\\bolt9\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\MyFlatAPI\\MyFlatAPI\\obj\\",
+        "outputPath": "C:\\Users\\bolt9\\source\\repos\\MyFlatAPI\\MyFlatAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\bolt9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -30,6 +32,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +44,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -97,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
         }
       }
     }
